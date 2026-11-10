@@ -21,6 +21,8 @@ plt.barh(most_played_champ.index[-20:],
          color="#a103fc", 
          edgecolor="black")
 
+plt.title('Frequência de escolha de cada campeão de League of Legends')
+
 plt.show()
 
 #   ----- Elo dos jogadores da amostra -----
@@ -60,7 +62,6 @@ plt.close()
 df["game_start_utc"] = pd.to_datetime(df["game_start_utc"])
 df["game_date"] = df["game_start_utc"].dt.date
 
-
 matches_per_day = df.groupby('game_date')['game_id'].nunique()
 
 plt.plot(matches_per_day.index, matches_per_day.values,
@@ -68,7 +69,7 @@ plt.plot(matches_per_day.index, matches_per_day.values,
          markersize=5,
          markerfacecolor='#ff8800',
          markeredgecolor='#ff8800',
-         linestyle='dashdot',
+         linestyle='linear',
          color="#dd7600")
 
 plt.gcf().autofmt_xdate()
