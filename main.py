@@ -56,6 +56,7 @@ plt.show()
 #   ----- Quantia de partidas por dia -----
 plt.close()
 
+# Convertendo para data
 df["game_start_utc"] = pd.to_datetime(df["game_start_utc"])
 df["game_date"] = df["game_start_utc"].dt.date
 
