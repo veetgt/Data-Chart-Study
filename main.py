@@ -52,6 +52,16 @@ plt.pie(n_players, labels=all_elo,
         autopct="%1.1f%%", 
         colors=colors,
         explode=[0,0,0,0.3])
+plt.legend(
+    plt.gca().patches,
+    [
+        "Low elo: Iron, Bronze, Silver",
+        "Mid elo: Gold, Platinum, Emerald",
+        "High elo: Diamond, Master, Grandmaster",
+        "Challenger",
+    ],
+    loc="best",
+)
 plt.title("Distribuição de elo da amostra")
 plt.show()
 
@@ -69,7 +79,6 @@ plt.plot(matches_per_day.index, matches_per_day.values,
          markersize=5,
          markerfacecolor='#ff8800',
          markeredgecolor='#ff8800',
-         linestyle='linear',
          color="#dd7600")
 
 plt.gcf().autofmt_xdate()
